@@ -1,0 +1,26 @@
+{
+  "name": "nginx-config-formatter",
+  "version": "1.0.0",
+  "description": "A formatter for Nginx config files",
+  "main": "index.js",
+  "type": "module",
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "test": "vitest"
+  },
+  "author": "Aaron",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "eslint": "^8.38.0",
+    "eslint-config-standard": "^17.0.0",
+    "rollup": "^3.20.2",
+    "standard-version": "^9.5.0",
+    "typescript": "^5.0.4",
+    "vitest": "^0.29.8"
+  }
+}
