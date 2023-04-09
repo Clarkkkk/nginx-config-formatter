@@ -8,7 +8,9 @@
     "node": ">=14"
   },
   "scripts": {
-    "test": "vitest"
+    "test": "vitest",
+    "test:update": "vitest --update",
+    "test:run": "vitest --run --changed"
   },
   "author": "Aaron",
   "license": "ISC",
@@ -20,7 +22,12 @@
     "eslint-config-standard": "^17.0.0",
     "rollup": "^3.20.2",
     "standard-version": "^9.5.0",
+    "tsx": "^3.12.6",
     "typescript": "^5.0.4",
+    "vite": "^4.2.1",
     "vitest": "^0.29.8"
+  },
+  "dependencies": {
+    "globby": "^13.1.3"
   }
 }

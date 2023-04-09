@@ -1,0 +1,118 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`format > example.conf 1`] = `
+"
+user nginx;
+worker_processes 1;
+
+error_log /var/log/nginx/error.log warn;
+pid /var/run/nginx.pid;
+
+
+events {
+	worker_connections 1024;
+}
+
+
+http {
+	include /etc/nginx/mime.types;
+	log_format main '$remote_addr - $remote_user [$time_local] \\"$request\\" '
+	'$status $body_bytes_sent \\"$http_referer\\" '
+	'\\"$http_user_agent\\" \\"$http_x_forwarded_for\\"'
+	'\\"$http_cookie\\"';
+
+	access_log /var/log/nginx/access.log main;
+
+	sendfile on;
+	#tcp_nopush     on;
+
+	keepalive_timeout 65;
+
+	gzip on;
+	gzip_min_length 1k;
+	gzip_buffers 4 16k;
+	gzip_http_version 1.1;
+	gzip_comp_level 6;
+	gzip_types text/plain application/javascript text/css application/xml application/json text/javascript application/x-javascript;
+	gzip_vary on;
+
+	include /etc/nginx/conf.d/*.conf;
+
+	server {
+		listen 443 ssl; # managed by Certbot
+		ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem; # managed by Certbot
+		ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem; # managed by Certbot
+		include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+		ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+		server_name example.com;
+
+		location / {
+			add_header X-Content-Security-Policy \\"default-src 'self'; \\\\
+			script-src 'self' https://ssl.google-analytics.com; \\\\
+			img-src 'self' https://ssl.google-analytics.com\\";
+			root /app;
+			index index.html;
+			try_files $uri $uri/ /index.html;
+		}
+	}
+
+	server {
+		if ($http_user_agent ~* \\"qihoobot|Baiduspider|Googlebot|Googlebot-Mobile|Googlebot-Image|Mediapartners-Google|Adsbot-Google|Feedfetcher-Google|Yahoo! Slurp|Yahoo! Slurp China|YoudaoBot|Sosospider|Sogou spider|Sogou web spider|MSNBot|ia_archiver|Tomato Bot\\") {
+			return 403;
+		}
+
+		listen 443 ssl;
+		server_name example.com;
+
+		location / {
+			proxy_pass http://127.0.0.1:25500/;
+			proxy_set_header Host $host;
+		}
+		ssl_certificate /etc/letsencrypt/live/sub.example.com/fullchain.pem; # managed by Certbot
+		ssl_certificate_key /etc/letsencrypt/live/sub.example.com/privkey.pem; # managed by Certbot
+
+	}
+
+	server {
+		if ($host = example.com) {
+			return 301 https://$host$request_uri;
+		} # managed by Certbot
+
+
+		listen 80;
+		server_name example.com;
+		return 404; # managed by Certbot
+	}
+
+	server {
+		if ($http_user_agent ~* \\"qihoobot|Baiduspider|Googlebot|Googlebot-Mobile|Googlebot-Image|Mediapartners-Google|Adsbot-Google|Feedfetcher-Google|Yahoo! Slurp|Yahoo! Slurp China|YoudaoBot|Sosospider|Sogou spider|Sogou web spider|MSNBot|ia_archiver|Tomato Bot\\") {
+			return 403;
+		}
+
+		if ($host = example.com) {
+			return 301 https://$host$request_uri;
+		} # managed by Certbot
+
+
+		listen 80;
+		server_name example.com;
+		return 404; # managed by Certbot
+	}
+
+	server {
+		if ($http_user_agent ~* \\"qihoobot|Baiduspider|Googlebot|Googlebot-Mobile|Googlebot-Image|Mediapartners-Google|Adsbot-Google|Feedfetcher-Google|Yahoo! Slurp|Yahoo! Slurp China|YoudaoBot|Sosospider|Sogou spider|Sogou web spider|MSNBot|ia_archiver|Tomato Bot\\") {
+			return 403;
+		}
+
+		if ($host = sub.example.com) {
+			return 301 https://$host$request_uri;
+		} # managed by Certbot
+
+
+		listen 80;
+		server_name sub.example.com;
+		return 404; # managed by Certbot
+	}
+}
+"
+`;
