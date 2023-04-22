@@ -3,21 +3,26 @@ import { readFile, writeFile, stripLine, extractAllPossibleText } from './utils'
 import { defaultOptions } from './defaults'
 
 const INDENTATION = '\t'
+const SPACE = '    '
 
 export class NginxFormatter {
     options: OptionType
-    files: string[]
+    indentation: string
 
     constructor(options?: Partial<OptionType>) {
         this.options = {
             ...defaultOptions,
             ...(options || {})
         }
-        this.files = []
+        if (this.options.indentStyle === 'space') {
+            this.indentation = SPACE
+        } else {
+            this.indentation = INDENTATION
+        }
     }
 
-    async getFilePath() {
-        this.files = await globby(this.options.inputPath, {
+    async getFilePath(path: string) {
+        return globby(path, {
             expandDirectories: {
                 extensions: ['conf']
             }
@@ -103,7 +108,7 @@ export class NginxFormatter {
                 currentIndent -= 1
             }
             if (line !== '') {
-                indentedLines.push(INDENTATION.repeat(currentIndent) + line)
+                indentedLines.push(this.indentation.repeat(currentIndent) + line)
             } else {
                 indentedLines.push('')
             }
@@ -150,7 +155,7 @@ export class NginxFormatter {
         return allLines
     }
 
-    format(content: string) {
+    formatFile(content: string) {
         let lines = this.cleanLines(content)
 
         if (!this.options.dontJoinCurlyBracet) {
@@ -167,13 +172,11 @@ export class NginxFormatter {
         return lines.join('\n')
     }
 
-    async exec() {
-        for (const filePath of this.files) {
+    async format(path: string) {
+        const files = await this.getFilePath(path)
+        for (const filePath of files) {
             const fileContent = await readFile(filePath, import.meta.url)
-            const outputContents = await this.format(fileContent)
-            // save all the contents to the file.
-            // if the user didnt choose output path, then the input file is used.
-            //  if (options.inputPath == options.outputPath) {
+            const outputContents = await this.formatFile(fileContent)
             writeFile(filePath, outputContents, import.meta.url)
         }
     }

@@ -1,12 +1,7 @@
 export const defaultOptions: OptionType = {
-    name: 'nginxbeautifier',
-    spaces: 0,
-    tabs: 0,
+    indentStyle: 'tab',
     dontJoinCurlyBracet: false,
     align: false,
     trailingBlankLines: false,
-    recursive: false,
-    inputPath: '',
-    outputPath: '',
     extension: 'conf'
 }
