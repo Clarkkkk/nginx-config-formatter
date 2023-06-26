@@ -2,15 +2,31 @@
   "name": "nginx-config-formatter",
   "version": "1.0.0",
   "description": "A formatter for Nginx config files",
-  "main": "index.js",
   "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "import": "./index-module.js",
+    "require": "./index-require.cjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
   "engines": {
-    "node": ">=14"
+    "node": ">=14.18.0"
+  },
+  "bin": {
+    "nginx-config-formatter": "./dist/nginx-config-formatter.cjs"
   },
   "scripts": {
+    "typecheck": "tsc --noEmit --watch --preserveWatchOutput",
     "test": "vitest",
     "test:update": "vitest --update",
-    "test:run": "vitest --run --changed"
+    "test:run": "vitest --run --changed",
+    "build": "vite build"
   },
   "author": "Aaron",
   "license": "ISC",
@@ -20,14 +36,16 @@
     "@typescript-eslint/parser": "^5.57.1",
     "eslint": "^8.38.0",
     "eslint-config-standard": "^17.0.0",
-    "rollup": "^3.20.2",
+    "rollup-plugin-node-builtins": "^2.1.2",
     "standard-version": "^9.5.0",
     "tsx": "^3.12.6",
-    "typescript": "^5.0.4",
-    "vite": "^4.2.1",
-    "vitest": "^0.29.8"
+    "typescript": "^5.1.3",
+    "vite": "^4.3.1",
+    "vite-plugin-dts": "2.3.0",
+    "vitest": "^0.30.1"
   },
   "dependencies": {
-    "globby": "^13.1.3"
+    "globby": "^13.1.3",
+    "optionator": "^0.9.1"
   }
 }

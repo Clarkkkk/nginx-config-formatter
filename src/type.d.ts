@@ -1,5 +1,3 @@
-/// <reference types="vite/client" />
-
 interface OptionType {
     indentStyle: 'space' | 'tab';
     dontJoinCurlyBracet: boolean;
