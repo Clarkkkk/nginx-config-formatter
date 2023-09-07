@@ -186,7 +186,7 @@ export class NginxFormatter {
     formatFile(content: string) {
         let lines = this.cleanLines(content)
 
-        if (!this.options.dontJoinCurlyBracet) {
+        if (!this.options.dontJoinCurlyBracket) {
             lines = this.joinOpeningBracket(lines)
         }
         // perform the indentation

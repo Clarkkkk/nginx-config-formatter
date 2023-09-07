@@ -9,6 +9,7 @@ const main = defineCommand({
     args: {
         help: {
             type: 'boolean',
+            alias: 'h',
             description: 'display usage help'
         },
         path: {
@@ -19,9 +20,10 @@ const main = defineCommand({
         },
         indentStyle: {
             type: 'string',
+            alias: 'i',
             description: 'style of indentation, `space` or `tab`'
         },
-        dontJoinCurlyBracet: {
+        dontJoinCurlyBracket: {
             type: 'boolean',
             description: '',
             alias: 'c'

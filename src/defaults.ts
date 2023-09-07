@@ -1,6 +1,6 @@
 export const defaultOptions: OptionType = {
     indentStyle: 'tab',
-    dontJoinCurlyBracet: false,
+    dontJoinCurlyBracket: false,
     align: false,
     trailingBlankLines: false,
     extension: 'conf'
