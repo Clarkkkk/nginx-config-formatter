@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { defineCommand, runMain, showUsage } from 'citty'
-import format from '../src/index'
+import { formatFile } from '../src/index'
 
 const main = defineCommand({
     meta: {
@@ -44,7 +44,7 @@ const main = defineCommand({
             showUsage(main)
         } else {
             // const filePath = path.resolve(process.cwd(), args.path)
-            await format(args.path, args as OptionType)
+            await formatFile(args.path, args as OptionType)
             // eslint-disable-next-line no-console
             console.log('all files formatted.')
         }
