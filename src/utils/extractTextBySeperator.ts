@@ -5,7 +5,11 @@
  * @param {string} seperator2 The second seperator to use
  * @return {string}
  */
-export function extractTextBySeperator(input: string, seperator1: string | RegExp, seperator2: string | RegExp | undefined) {
+export function extractTextBySeperator(
+    input: string,
+    seperator1: string | RegExp,
+    seperator2: string | RegExp | undefined
+) {
     if (seperator2 === undefined) {
         seperator2 = seperator1
     }

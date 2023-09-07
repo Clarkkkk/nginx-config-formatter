@@ -29,6 +29,7 @@
     "test": "vitest",
     "test:update": "vitest --update",
     "test:run": "vitest --run --changed",
+    "format": "eslint --fix --cache **/*.{js,ts}",
     "build": "vite build",
     "watch": "vite build --watch",
     "release": "commit-and-tag-version"
