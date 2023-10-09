@@ -19,13 +19,13 @@
     "files": [
         "dist"
     ],
-    "homepage": "https://github.com/Clarkkkk/vue-class-converter#readme",
+    "homepage": "https://github.com/Clarkkkk/nginx-config-formatter#readme",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Clarkkkk/vue-class-converter"
+        "url": "git+https://github.com/Clarkkkk/nginx-config-formatter"
     },
     "bugs": {
-        "url": "https://github.com/Clarkkkk/vue-class-converter/issues"
+        "url": "https://github.com/Clarkkkk/nginx-config-formatter/issues"
     },
     "badges": [],
     "galleryBanner": {
