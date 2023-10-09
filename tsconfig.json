@@ -58,11 +58,6 @@
         "skipLibCheck": true,
         "allowUnreachableCode": true
     },
-    "include": [
-        "src",
-        "tests",
-        "bin"
-    ],
     "exclude": [
         "node_modules",
         "dist"
