@@ -1,5 +1,4 @@
 import { readFile, writeFile } from 'fs/promises'
-import { globby } from 'globby'
 import { resolve } from 'pathe'
 import { defaultOptions } from './defaults'
 import { extractAllPossibleText, stripLine } from './utils'
@@ -24,6 +23,7 @@ export class NginxFormatter {
     }
 
     async getFilePath(filePath: string) {
+        const { globby } = await import('globby')
         return globby(filePath, {
             expandDirectories: {
                 extensions: [this.options.extension]
