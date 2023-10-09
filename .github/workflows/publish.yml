@@ -4,10 +4,23 @@ on:
       - 'main'
 
 jobs:
-  publish:
+  publish-core:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+
+      - uses: marceloprado/has-changed-path@v1.0.1
+        id: changed-core
+        with:
+          paths: packages/core
+
+      - uses: marceloprado/has-changed-path@v1.0.1
+        id: changed-vscode
+        with:
+          paths: packages/core packages/vscode
+
       - uses: actions/setup-node@v3
         with:
           node-version: "18"
@@ -32,13 +45,33 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
 
-      - name: Install dependencies
+      - name: install dependencies
         run: pnpm install
 
-      - name: Build
-        run: npm run build
+      - name: build core
+        if: steps.changed-core.outputs.changed == 'true'
+        run: npm run build:core
 
-      - name: publish
+      - name: publish core
+        if: steps.changed-core.outputs.changed == 'true'
         uses: JS-DevTools/npm-publish@v2
         with:
           token: ${{ secrets.NPM_TOKEN }}
+          package: packages/core
+
+      - name: Publish to Visual Studio Marketplace
+        if: steps.changed-vscode.outputs.changed == 'true'
+        uses: HaaLeo/publish-vscode-extension@v1
+        with:
+          packagePath: packages/vscode
+          pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
+          registryUrl: https://marketplace.visualstudio.com
+          dependencies: false
+
+      - name: Publish to Open VSX Registry
+        if: steps.changed-vscode.outputs.changed == 'true'
+        uses: HaaLeo/publish-vscode-extension@v1
+        with:
+          packagePath: packages/vscode
+          pat: ${{ secrets.OPEN_VSX_TOKEN }}
+          dependencies: false
