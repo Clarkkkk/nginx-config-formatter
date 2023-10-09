@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.1.1](https://github.com/Clarkkkk/nginx-config-formatter/compare/v1.1.0...v1.1.1) (2023-10-09)
+
+
+### Bug Fixes
+
+* change the language id to activate ([bf51b5a](https://github.com/Clarkkkk/nginx-config-formatter/commit/bf51b5a6d48b954a67de5b51f6be504561163ca2))
+* fix typo ([7b18355](https://github.com/Clarkkkk/nginx-config-formatter/commit/7b18355735ec9de2fddf372054f3de38f83cede9))
+
+
+
 # [1.1.0](https://github.com/Clarkkkk/nginx-config-formatter/compare/v1.0.0...v1.1.0) (2023-10-09)
 
 
