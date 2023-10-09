@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+# [1.2.0](https://github.com/Clarkkkk/nginx-config-formatter/compare/v1.1.1...v1.2.0) (2023-10-09)
+
+
+### Bug Fixes
+
+* **vscode:** do not externalize dependencies ([fdcde8f](https://github.com/Clarkkkk/nginx-config-formatter/commit/fdcde8fbabdfa415b66895908ee66f6b534c112f))
+
+
+### Features
+
+* **vscode:** add language configuration for auto wrapping etc ([b818b01](https://github.com/Clarkkkk/nginx-config-formatter/commit/b818b0194a9ae9206858d84676917bdb4a90b40a))
+
+
+
 ## [1.1.1](https://github.com/Clarkkkk/nginx-config-formatter/compare/v1.1.0...v1.1.1) (2023-10-09)
 
 
