@@ -4,7 +4,7 @@ on:
       - 'main'
 
 jobs:
-  publish-core:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

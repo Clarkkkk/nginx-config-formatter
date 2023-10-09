@@ -33,7 +33,7 @@
     },
     "icon": "assets/logo.png",
     "main": "./dist/extension.cjs",
-    "browser": "./dist/extension.js",
+    "browser": "./dist/extension.cjs",
     "contributes": {
         "languages": [
             {
