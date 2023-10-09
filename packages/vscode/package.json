@@ -38,18 +38,21 @@
     "contributes": {
         "languages": [
             {
-                "id": "nginx-configuration",
+                "id": "nginx",
                 "aliases": [
-                    "Nginx Conf"
+                    "NGINX Conf",
+                    "NGINX",
+                    "nginx"
                 ],
                 "extensions": [
                     ".conf"
-                ]
+                ],
+                "configuration": "./nginx.configuration.json"
             }
         ]
     },
     "activationEvents": [
-        "onLanguage:nginx-configuration"
+        "onLanguage:nginx"
     ],
     "scripts": {
         "vscode:prepublish": "pnpm run package",

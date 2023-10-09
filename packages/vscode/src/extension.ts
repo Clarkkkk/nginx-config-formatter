@@ -7,7 +7,7 @@ import * as vscode from 'vscode'
 // Your extension is activated the very first time the command is executed
 export function activate() {
     console.log('nginx formatter activated.')
-    vscode.languages.registerDocumentFormattingEditProvider('nginx-configuration', {
+    vscode.languages.registerDocumentFormattingEditProvider('nginx', {
         provideDocumentFormattingEdits(document: vscode.TextDocument): vscode.TextEdit[] {
             const content = document.getText()
             const formatter = new NginxFormatter()
