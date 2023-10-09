@@ -1,3 +1,8 @@
 {
-  "preset": "angular"
+  "preset": "angular",
+  "bumpFiles": [
+    "package.json",
+    "packages/core/package.json",
+    "packages/vscode/package.json"
+  ]
 }
