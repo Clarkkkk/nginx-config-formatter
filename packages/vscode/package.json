@@ -1,0 +1,81 @@
+{
+    "name": "nginx-config-formatter-vscode-extension",
+    "displayName": "Nginx Config Formatter",
+    "description": "A zero config formatter for nginx config files",
+    "author": "Aaron Zhou",
+    "publisher": "AaaaronZhou",
+    "version": "1.0.0",
+    "type": "module",
+    "engines": {
+        "vscode": "^1.60.0"
+    },
+    "categories": [
+        "Formatters"
+    ],
+    "keywords": [
+        "nginx",
+        "formatter"
+    ],
+    "files": [
+        "dist"
+    ],
+    "homepage": "https://github.com/Clarkkkk/vue-class-converter#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Clarkkkk/vue-class-converter"
+    },
+    "bugs": {
+        "url": "https://github.com/Clarkkkk/vue-class-converter/issues"
+    },
+    "badges": [],
+    "galleryBanner": {
+        "theme": "light"
+    },
+    "icon": "assets/logo.png",
+    "main": "./dist/extension.cjs",
+    "browser": "./dist/extension.js",
+    "contributes": {
+        "languages": [
+            {
+                "id": "nginx-configuration",
+                "aliases": [
+                    "Nginx Conf"
+                ],
+                "extensions": [
+                    ".conf"
+                ]
+            }
+        ]
+    },
+    "activationEvents": [
+        "onLanguage:nginx-configuration"
+    ],
+    "scripts": {
+        "vscode:prepublish": "pnpm run package",
+        "typecheck": "tsc --noEmit --watch --preserveWatchOutput",
+        "compile": "vite build",
+        "watch": "vite build",
+        "package": "webpack --mode production --devtool hidden-source-map",
+        "compile-tests": "tsc -p . --outDir out",
+        "watch-tests": "tsc -p . -w --outDir out",
+        "lint": "eslint --cache --fix src/**/*.{js,ts}",
+        "lint-staged": "lint-staged",
+        "test": "vitest",
+        "test:update": "vitest --update",
+        "test:run": "vitest --run --changed",
+        "release": "commit-and-tag-version"
+    },
+    "dependencies": {
+        "nginx-config-formatter": "workspace:*"
+    },
+    "devDependencies": {
+        "@types/glob": "^8.1.0",
+        "@types/node": "20.2.5",
+        "@types/vscode": "^1.60.0",
+        "@vscode/test-electron": "^2.3.2",
+        "glob": "^8.1.0",
+        "rollup-plugin-node-externals": "^6.1.1",
+        "vite": "^4.3.1",
+        "vite-plugin-dts": "^3.6.0"
+    }
+}

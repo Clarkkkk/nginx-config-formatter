@@ -1,0 +1,15 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "composite": true,
+        "outDir": "node_modules/.cache/nginx-config-formatter-vscode-extension",
+    },
+    "include": [
+        "src"
+    ],
+    "references": [
+        {
+            "path": "../core/tsconfig.json"
+        }
+    ]
+}

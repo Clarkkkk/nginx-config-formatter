@@ -1,0 +1,42 @@
+{
+    "name": "nginx-config-formatter",
+    "version": "1.0.0",
+    "description": "A formatter for Nginx config files",
+    "author": "Aaron",
+    "license": "MIT",
+    "type": "module",
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.js",
+    "types": "./dist/src/index.d.ts",
+    "exports": {
+        "types": "./dist/src/index.d.ts",
+        "import": "./dist/index.js",
+        "require": "./dist/index.cjs"
+    },
+    "files": [
+        "dist"
+    ],
+    "sideEffects": false,
+    "engines": {
+        "node": ">=14.18.0"
+    },
+    "bin": {
+        "nginx-config-formatter": "./dist/nginx-config-formatter.js"
+    },
+    "scripts": {
+        "build": "vite build",
+        "watch": "vite build --watch"
+    },
+    "dependencies": {
+        "citty": "^0.1.3",
+        "globby": "^13.1.3",
+        "optionator": "^0.9.1",
+        "pathe": "^1.1.1"
+    },
+    "devDependencies": {
+        "@types/node": "^18.15.11",
+        "rollup-plugin-node-externals": "^6.1.1",
+        "vite": "^4.3.1",
+        "vite-plugin-dts": "2.3.0"
+    }
+}
