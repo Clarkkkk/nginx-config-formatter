@@ -18,7 +18,9 @@ export default defineConfig({
             copyDtsFiles: true
         }),
         {
-            ...nodeExternals(),
+            ...nodeExternals({
+                deps: false
+            }),
             enforce: 'pre'
         }
     ]
