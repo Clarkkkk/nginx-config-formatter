@@ -4,7 +4,7 @@
     "description": "A zero config formatter for nginx config files",
     "author": "Aaron Zhou",
     "publisher": "AaaaronZhou",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "type": "module",
     "engines": {
         "vscode": "^1.60.0"
