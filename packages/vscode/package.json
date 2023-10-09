@@ -15,6 +15,9 @@
     ],
     "keywords": [
         "nginx",
+        "conf",
+        "configuration",
+        "format",
         "formatter"
     ],
     "files": [
