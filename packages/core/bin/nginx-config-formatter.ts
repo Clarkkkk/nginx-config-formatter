@@ -22,31 +22,38 @@ const main = defineCommand({
         indentStyle: {
             type: 'string',
             alias: 'i',
-            description: 'style of indentation, `space` or `tab`'
+            description: 'style of indentation, space or tab, defaults to space',
+            default: 'space'
         },
         dontJoinCurlyBracket: {
             type: 'boolean',
-            description: '',
-            alias: 'c'
+            description: 'if true, the opening bracket starts with a new line, defaults to false',
+            alias: 'c',
+            default: false
         },
         align: {
             type: 'boolean',
-            alias: 'a'
+            description: 'align the values of all directives in the same block, defaults to false',
+            alias: 'a',
+            default: false
         },
         trailingBlankLines: {
             type: 'boolean',
-            alias: 'l'
+            description: 'append a trailing blank line at the end of the file, defaults to true',
+            alias: 'l',
+            default: false
         },
         extension: {
             type: 'string',
-            alias: 'ext'
+            description: 'the file extension of nginx config files, defaults to conf',
+            alias: 'ext',
+            default: 'conf'
         }
     },
     async run({ args }) {
         if (args.help) {
             showUsage(main)
         } else {
-            // const filePath = path.resolve(process.cwd(), args.path)
             await formatFile(args.path, args as OptionType)
             // eslint-disable-next-line no-console
             console.log('all files formatted.')

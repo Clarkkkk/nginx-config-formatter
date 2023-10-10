@@ -15,6 +15,7 @@ Features from [nginxbeautifier](https://github.com/vasilevich/nginxbeautifier)
 
 Plus we have:
 
+- empty lines after `{` or before `}` are trimmed
 - an API with full TypeScript support
 - tests to ensure consistency
 
@@ -34,19 +35,27 @@ pnpm i -g nginx-config-formatter
 nginx-config-formatter -p /etc/nginx
 
 available options:
--p, --path (required)    the path of files to be formatted
--h, --help    display usage help
--i, --indentStyle    style of indentation, space or tab
--c, --dontJoinCurlyBracet
--a, --align
--l, --trailingBlankLines
--ext, --extension
+-p, --path (required)          the path of files to be formatted
+-h, --help                     display usage help
+-i, --indentStyle              style of indentation, space or tab, defaults to space
+-c, --dontJoinCurlyBracket     if true, the opening bracket starts with a new line, defaults to false
+-a, --align                    align the values of all directives in the same block, defaults to false
+-l, --trailingBlankLines       append a trailing blank line at the end of the file, defaults to false
+-ext, --extension              the file extension of nginx config files, defaults to conf
 
 ```
 
 ## API Usage
 
-### `formatFile(path: string, options?: OptionType)`
+### `formatFile(path: string, options?: OptionType): Promise<void>`
+
+`path` can be the path of a `.conf` file, or a folder contains `.conf` file. [Glob syntax](https://github.com/mrmlnc/fast-glob#pattern-syntax) is also supported. If a folder is provided, all `.conf` files in it and its sub folders will be formatted.
+
+### `formatContent(content: string, options?: OptionType): string`
+
+`content` is the **full** content of a config file. Returns a string of the formatted content.
+
+The APIs above accepts a option object, which contains options similar to the CLI.
 
 ```ts
 interface OptionType {
