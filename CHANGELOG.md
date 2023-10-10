@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+# [1.3.0](https://github.com/Clarkkkk/nginx-config-formatter/compare/v1.2.0...v1.3.0) (2023-10-10)
+
+
+### Features
+
+* **core:** trim empty lines after `{` or before `}` ([fa109d7](https://github.com/Clarkkkk/nginx-config-formatter/commit/fa109d76922080db1461e2c92a26f40c001997a3))
+
+
+
 # [1.2.0](https://github.com/Clarkkkk/nginx-config-formatter/compare/v1.1.1...v1.2.0) (2023-10-09)
 
 
