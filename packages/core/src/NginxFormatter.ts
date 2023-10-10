@@ -1,6 +1,7 @@
 import { readFile, writeFile } from 'fs/promises'
 import { resolve } from 'pathe'
 import { defaultOptions } from './defaults'
+import type { OptionType } from './type'
 import { extractAllPossibleText, stripLine } from './utils'
 
 const INDENTATION = '\t'

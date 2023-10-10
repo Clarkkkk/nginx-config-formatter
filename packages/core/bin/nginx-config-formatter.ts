@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { defineCommand, runMain, showUsage } from 'citty'
 import { formatFile } from '../src/index'
+import type { OptionType } from '../src/type'
 
 const main = defineCommand({
     meta: {

@@ -1,4 +1,4 @@
-interface OptionType {
+export interface OptionType {
     indentStyle: 'space' | 'tab'
     dontJoinCurlyBracket: boolean
     align: boolean
