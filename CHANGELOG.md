@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+# [1.4.0](https://github.com/Clarkkkk/nginx-config-formatter/compare/v1.3.0...v1.4.0) (2023-10-10)
+
+
+### Bug Fixes
+
+* **core:** fix type issues ([b96d119](https://github.com/Clarkkkk/nginx-config-formatter/commit/b96d119bf73e102888d6177043bf92289ce8df16))
+
+
+### Features
+
+* **core:** change the default value of `indentStyle` to `space` ([19ef14f](https://github.com/Clarkkkk/nginx-config-formatter/commit/19ef14f81ba49c755a353ac56d52e18868ed05b4))
+* **core:** export `formatContent` to format the content string ([da80889](https://github.com/Clarkkkk/nginx-config-formatter/commit/da8088979750f2e63bdf4155a84838beba672e96))
+* **vscode:** offer a few options for users ([3861651](https://github.com/Clarkkkk/nginx-config-formatter/commit/386165199d45bd7629cd2585c209f338e58aba63))
+
+
+
 # [1.3.0](https://github.com/Clarkkkk/nginx-config-formatter/compare/v1.2.0...v1.3.0) (2023-10-10)
 
 
