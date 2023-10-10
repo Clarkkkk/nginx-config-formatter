@@ -1,7 +1,7 @@
 import type { OptionType } from './type'
 
 export const defaultOptions: OptionType = {
-    indentStyle: 'tab',
+    indentStyle: 'space',
     dontJoinCurlyBracket: false,
     align: false,
     trailingBlankLines: false,
