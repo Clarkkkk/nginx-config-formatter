@@ -2,7 +2,6 @@ import { NginxFormatter } from 'nginx-config-formatter'
 import * as vscode from 'vscode'
 
 export function activate() {
-    console.log('nginx formatter activated.')
     vscode.languages.registerDocumentFormattingEditProvider('nginx', {
         provideDocumentFormattingEdits(document: vscode.TextDocument): vscode.TextEdit[] {
             const configuration = vscode.workspace.getConfiguration(
@@ -14,7 +13,7 @@ export function activate() {
                 align: configuration.get('align'),
                 trailingBlankLines: configuration.get('trailingBlankLines')
             })
-            const formattedContent = formatter.formatFile(content)
+            const formattedContent = formatter.formatContent(content)
             const range = new vscode.Range(
                 document.positionAt(0),
                 document.positionAt(content.length)
