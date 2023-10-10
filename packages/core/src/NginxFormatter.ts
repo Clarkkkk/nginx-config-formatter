@@ -218,7 +218,7 @@ export class NginxFormatter {
         return allLines
     }
 
-    formatFile(content: string) {
+    formatContent(content: string) {
         let lines = this.cleanLines(content)
 
         if (!this.options.dontJoinCurlyBracket) {
@@ -235,12 +235,12 @@ export class NginxFormatter {
         return lines.join('\n')
     }
 
-    async format(path: string) {
+    async formatFile(path: string) {
         const files = await this.getFilePath(path)
         for (const filePath of files) {
             const absolutePath = resolve(process.cwd(), filePath)
             const fileContent = await readFile(absolutePath, { encoding: 'utf8' })
-            const outputContents = await this.formatFile(fileContent)
+            const outputContents = await this.formatContent(fileContent)
             writeFile(absolutePath, outputContents, { encoding: 'utf8' })
         }
     }

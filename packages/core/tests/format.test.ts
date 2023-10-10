@@ -8,6 +8,6 @@ describe('format', async () => {
     const file = await readFile(path, { encoding: 'utf8' })
     test('example.conf', async () => {
         const formatter = new NginxFormatter()
-        expect(formatter.formatFile(file)).toMatchFileSnapshot('./output/example.output.conf')
+        expect(formatter.formatContent(file)).toMatchFileSnapshot('./output/example.output.conf')
     })
 })
