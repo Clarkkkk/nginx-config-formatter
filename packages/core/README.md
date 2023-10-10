@@ -40,7 +40,7 @@ available options:
 -i, --indentStyle              style of indentation, space or tab, defaults to space
 -c, --dontJoinCurlyBracket     if true, the opening bracket starts with a new line, defaults to false
 -a, --align                    align the values of all directives in the same block, defaults to false
--l, --trailingBlankLines       append a trailing blank line at the end of the file, defaults to false
+-l, --trailingBlankLines       Append a trailing blank line after the opening bracket, defaults to false
 -ext, --extension              the file extension of nginx config files, defaults to conf
 
 ```

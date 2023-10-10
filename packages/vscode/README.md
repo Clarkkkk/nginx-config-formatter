@@ -18,13 +18,13 @@ A formatter with minimal configurations for Nginx config files based on [nginx-c
 
 ## Settings
 
-You can configure the extension in Settings.
+You can configure the extension in Settings. Simply search `nginx-config-formatter` in Settings tab.
 
 There are 3 configuration options:
 
 - Indent Style: Set the indent style, space or tab
 - Align: Whether to align the values of all directives in the same block
-- Trailing Blank Lines: Whether to append a trailing blank line at the end of the file
+- Trailing Blank Lines: Whether to append a trailing blank line after the opening bracket
 
 ## Changelog
 

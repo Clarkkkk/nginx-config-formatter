@@ -39,7 +39,8 @@ const main = defineCommand({
         },
         trailingBlankLines: {
             type: 'boolean',
-            description: 'append a trailing blank line at the end of the file, defaults to true',
+            description:
+                'Append a trailing blank line after the opening bracket, defaults to false',
             alias: 'l',
             default: false
         },

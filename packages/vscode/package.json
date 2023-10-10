@@ -75,9 +75,9 @@
                     "default": false
                 },
                 "nginx-config-formatter.trailingBlankLines": {
-                    "description": "Append a trailing blank line at the end of the file",
+                    "description": "Append a trailing blank line after the opening bracket",
                     "type": "boolean",
-                    "default": true
+                    "default": false
                 }
             }
         }
