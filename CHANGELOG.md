@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.4.1](https://github.com/Clarkkkk/nginx-config-formatter/compare/v1.4.0...v1.4.1) (2023-10-10)
+
+
+### Bug Fixes
+
+* **vscode:** fix an error due to the api change ([b645334](https://github.com/Clarkkkk/nginx-config-formatter/commit/b645334a41f9edfa8b552ce4204d88fd867f0870))
+
+
+
 # [1.4.0](https://github.com/Clarkkkk/nginx-config-formatter/compare/v1.3.0...v1.4.0) (2023-10-10)
 
 
