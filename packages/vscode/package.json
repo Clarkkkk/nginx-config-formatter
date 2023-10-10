@@ -1,7 +1,7 @@
 {
     "name": "nginx-config-formatter-vscode-extension",
     "displayName": "Nginx Config Formatter",
-    "description": "A zero config formatter for nginx config files",
+    "description": "A formatter with minimal configurations for nginx config files",
     "author": "Aaron Zhou",
     "publisher": "AaaaronZhou",
     "version": "1.3.0",
@@ -52,7 +52,35 @@
                 ],
                 "configuration": "./nginx.configuration.json"
             }
-        ]
+        ],
+        "configuration": {
+            "title": "Nginx Config Formatter",
+            "properties": {
+                "indentStyle": {
+                    "description": "Set the indent style",
+                    "type": "string",
+                    "enum": [
+                        "space",
+                        "tab"
+                    ],
+                    "enumDescriptions": [
+                        "Use 4 spaces for indentation",
+                        "Use tab for indentation"
+                    ],
+                    "default": "space"
+                },
+                "align": {
+                    "description": "Align the values of all directives in the same block",
+                    "type": "boolean",
+                    "default": false
+                },
+                "trailingBlankLines": {
+                    "description": "Append a trailing blank line at the end of the file",
+                    "type": "boolean",
+                    "default": true
+                }
+            }
+        }
     },
     "activationEvents": [
         "onLanguage:nginx"

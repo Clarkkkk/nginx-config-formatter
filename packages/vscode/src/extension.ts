@@ -1,16 +1,19 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import { NginxFormatter } from 'nginx-config-formatter'
 import * as vscode from 'vscode'
 
-// This method is called when your extension is activated
-// Your extension is activated the very first time the command is executed
 export function activate() {
     console.log('nginx formatter activated.')
     vscode.languages.registerDocumentFormattingEditProvider('nginx', {
         provideDocumentFormattingEdits(document: vscode.TextDocument): vscode.TextEdit[] {
+            const configuration = vscode.workspace.getConfiguration(
+                'nginx-config-formatter-vscode-extension'
+            )
             const content = document.getText()
-            const formatter = new NginxFormatter()
+            const formatter = new NginxFormatter({
+                indentStyle: configuration.get('indentStyle'),
+                align: configuration.get('align'),
+                trailingBlankLines: configuration.get('trailingBlankLines')
+            })
             const formattedContent = formatter.formatFile(content)
             const range = new vscode.Range(
                 document.positionAt(0),
@@ -22,6 +25,5 @@ export function activate() {
     })
 }
 
-// This method is called when your extension is deactivated
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 export function deactivate() {}
