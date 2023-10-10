@@ -33,11 +33,11 @@ export class NginxFormatter {
 
     cleanLines(configContents: string) {
         const splittedByLines = configContents.split(/\r\n|\r|\n/g)
+
         // put {  } on their own seperate lines
         // trim the spaces before and after each line
         // trim multi spaces into single spaces
-        // trim multi lines into two
-
+        // trim multi empty lines into two
         for (let index = 0, newline = 0; index < splittedByLines.length; index++) {
             splittedByLines[index] = splittedByLines[index].trim()
             if (!splittedByLines[index].startsWith('#') && splittedByLines[index] !== '') {
@@ -89,11 +89,45 @@ export class NginxFormatter {
                     splittedByLines[index] = line
                 }
             } else if (splittedByLines[index] === '') {
-                // remove more than two newlines
+                // remove more than two empty newlines
                 if (newline++ >= 2) {
-                    // while(splittedByLines[index]=="")
                     splittedByLines.splice(index, 1)
                     index--
+                }
+            }
+        }
+
+        // trim empty lines after `{` or before `}`
+        for (
+            let index = 0, empty = -1, opening = -1, closing = -1;
+            index < splittedByLines.length;
+            index++
+        ) {
+            if (/.*\{(\s*)?(#.*)?$/.test(splittedByLines[index])) {
+                opening = index
+            } else if (splittedByLines[index] === '' && empty === -1) {
+                empty = index
+            } else if (splittedByLines[index].trim().startsWith('}')) {
+                closing = index
+            }
+
+            if (empty !== -1) {
+                if (opening !== -1 && empty - 1 === opening) {
+                    splittedByLines.splice(empty, 1)
+                    if (closing > empty) {
+                        closing--
+                    }
+                    empty = -1
+                    index--
+                } else if (closing !== -1 && empty < closing) {
+                    splittedByLines.splice(empty, closing - empty)
+                    if (closing > empty) {
+                        closing = closing - (closing - empty)
+                    }
+                    empty = -1
+                    index--
+                } else if (index > empty && splittedByLines[index] !== '') {
+                    empty = -1
                 }
             }
         }
