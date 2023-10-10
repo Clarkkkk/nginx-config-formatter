@@ -35,7 +35,7 @@ pnpm i -g nginx-config-formatter
 nginx-config-formatter -p /etc/nginx
 
 available options:
--p, --path (required)          the path of files to be formatted
+-p, --path (required)          the path of files to be formatted. Support glob syntax
 -h, --help                     display usage help
 -i, --indentStyle              style of indentation, space or tab, defaults to space
 -c, --dontJoinCurlyBracket     if true, the opening bracket starts with a new line, defaults to false
@@ -49,21 +49,21 @@ available options:
 
 ### `formatFile(path: string, options?: OptionType): Promise<void>`
 
-`path` can be the path of a `.conf` file, or a folder contains `.conf` file. [Glob syntax](https://github.com/mrmlnc/fast-glob#pattern-syntax) is also supported. If a folder is provided, all `.conf` files in it and its sub folders will be formatted.
+`path` can be the path of a `.conf` file, or a folder contains `.conf` file. [Glob syntax](https://github.com/mrmlnc/fast-glob#pattern-syntax) is also supported. If a folder is provided, all `.conf` files including those in its sub folders will be formatted.
 
 ### `formatContent(content: string, options?: OptionType): string`
 
 `content` is the **full** content of a config file. Returns a string of the formatted content.
 
-The APIs above accepts a option object, which contains options similar to the CLI.
+The APIs above accepts a option object. All options are optional and its default value is the same as the CLI.
 
 ```ts
 interface OptionType {
-    indentStyle: 'space' | 'tab'
-    dontJoinCurlyBracket: boolean
-    align: boolean
-    trailingBlankLines: boolean
-    extension: string
+    indentStyle?: 'space' | 'tab'
+    dontJoinCurlyBracket?: boolean
+    align?: boolean
+    trailingBlankLines?: boolean
+    extension?: string
 }
 ```
 
