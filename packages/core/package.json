@@ -4,6 +4,14 @@
     "description": "A formatter for Nginx config files",
     "author": "Aaron",
     "license": "MIT",
+    "homepage": "https://github.com/Clarkkkk/nginx-config-formatter/tree/main/packages/core#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Clarkkkk/nginx-config-formatter"
+    },
+    "bugs": {
+        "url": "https://github.com/Clarkkkk/nginx-config-formatter/issues"
+    },
     "type": "module",
     "main": "./dist/index.cjs",
     "module": "./dist/index.js",
