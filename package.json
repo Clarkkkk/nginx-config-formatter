@@ -14,7 +14,7 @@
     "test:run": "vitest --run --changed",
     "format": "eslint --fix --cache **/*.{js,ts}",
     "build:core": "pnpm --filter nginx-config-formatter build",
-    "build:vscode": "pnpm --filter nginx-config-formatter-vscode-extension compile",
+    "build:vscode": "npm run build:core & pnpm --filter nginx-config-formatter-vscode-extension compile",
     "release": "commit-and-tag-version"
   },
   "devDependencies": {
