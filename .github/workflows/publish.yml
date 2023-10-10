@@ -49,7 +49,6 @@ jobs:
         run: pnpm install
 
       - name: build core
-        if: steps.changed-core.outputs.changed == 'true'
         run: npm run build:core
 
       - name: publish core

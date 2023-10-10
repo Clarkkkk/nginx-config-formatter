@@ -4,9 +4,7 @@ import * as vscode from 'vscode'
 export function activate() {
     vscode.languages.registerDocumentFormattingEditProvider('nginx', {
         provideDocumentFormattingEdits(document: vscode.TextDocument): vscode.TextEdit[] {
-            const configuration = vscode.workspace.getConfiguration(
-                'nginx-config-formatter-vscode-extension'
-            )
+            const configuration = vscode.workspace.getConfiguration('nginx-config-formatter')
             const content = document.getText()
             const formatter = new NginxFormatter({
                 indentStyle: configuration.get('indentStyle'),

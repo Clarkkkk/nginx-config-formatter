@@ -4,7 +4,7 @@
     "description": "A formatter with minimal configurations for nginx config files",
     "author": "Aaron Zhou",
     "publisher": "AaaaronZhou",
-    "version": "1.4.1",
+    "version": "1.4.2",
     "license": "MIT",
     "type": "module",
     "engines": {
@@ -56,7 +56,7 @@
         "configuration": {
             "title": "Nginx Config Formatter",
             "properties": {
-                "indentStyle": {
+                "nginx-config-formatter.indentStyle": {
                     "description": "Set the indent style",
                     "type": "string",
                     "enum": [
@@ -69,12 +69,12 @@
                     ],
                     "default": "space"
                 },
-                "align": {
+                "nginx-config-formatter.align": {
                     "description": "Align the values of all directives in the same block",
                     "type": "boolean",
                     "default": false
                 },
-                "trailingBlankLines": {
+                "nginx-config-formatter.trailingBlankLines": {
                     "description": "Append a trailing blank line at the end of the file",
                     "type": "boolean",
                     "default": true
