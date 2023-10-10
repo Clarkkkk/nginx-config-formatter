@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.4.3](https://github.com/Clarkkkk/nginx-config-formatter/compare/v1.4.1...v1.4.3) (2023-10-10)
+
+
+### Bug Fixes
+
+* correct the description of `trailingBlankLines` and set its default value to false in all packages ([b6d4157](https://github.com/Clarkkkk/nginx-config-formatter/commit/b6d4157a73c538b2179318d9c94fca4f92c97dd3))
+* **vscode:** fix an error that cause configurations not taking effect ([1df9531](https://github.com/Clarkkkk/nginx-config-formatter/commit/1df953194284c8439c29c256e2ec6495fab9407e))
+
+
+
 ## [1.4.1](https://github.com/Clarkkkk/nginx-config-formatter/compare/v1.4.0...v1.4.1) (2023-10-10)
 
 
