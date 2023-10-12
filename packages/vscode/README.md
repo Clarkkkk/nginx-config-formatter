@@ -6,7 +6,7 @@
 [![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg)](http://opensource.org/licenses/MIT)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/Clarkkkk/nginx-config-formatter/.github%2Fworkflows%2Fpublish.yml)](https://github.com/Clarkkkk/nginx-config-formatter/actions)
 
-A formatter with minimal configurations for Nginx config files based on [nginx-config-formatter](https://www.npmjs.com/package/nginx-config-formatter).
+A formatter with minimal configurations for Nginx config files, based on [nginx-config-formatter](https://www.npmjs.com/package/nginx-config-formatter).
 
 ## Features
 
@@ -15,6 +15,16 @@ A formatter with minimal configurations for Nginx config files based on [nginx-c
 - empty lines after `{` or before `}` are trimmed
 - curly braces placement follows Java convention
 - whitespaces are collapsed, except in comments and quotation marks
+
+## Usage
+
+Use `Ctrl/Command + Shift + p` to open the command palette, type "format", select "Format Document With..." and click "Nginx Config Formatter" to format the conf file.
+
+![image-1](https://raw.githubusercontent.com/Clarkkkk/nginx-config-formatter/main/packages/vscode/assets/image-1.png)
+
+You may also click "Configure Default Formatter..." and select "Nginx Config Formatter" to be your default formatter for conf files.
+
+![image-2](https://raw.githubusercontent.com/Clarkkkk/nginx-config-formatter/main/packages/vscode/assets/image-2.png)
 
 ## Settings
 
