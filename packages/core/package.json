@@ -1,6 +1,6 @@
 {
     "name": "nginx-config-formatter",
-    "version": "1.4.3",
+    "version": "1.4.5",
     "description": "A formatter for Nginx config files",
     "author": "Aaron",
     "license": "MIT",

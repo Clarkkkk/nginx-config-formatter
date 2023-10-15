@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.4.5](https://github.com/Clarkkkk/nginx-config-formatter/compare/v1.4.3...v1.4.5) (2023-10-15)
+
+
+### Bug Fixes
+
+* dependencies should be bundled into output ([d72446a](https://github.com/Clarkkkk/nginx-config-formatter/commit/d72446a0867361a2b0d7cc55b3b40f5d6de1076d))
+
+
+
 ## [1.4.3](https://github.com/Clarkkkk/nginx-config-formatter/compare/v1.4.1...v1.4.3) (2023-10-10)
 
 

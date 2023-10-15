@@ -1,6 +1,6 @@
 {
   "name": "nginx-config-formatter-monorepo",
-  "version": "1.4.3",
+  "version": "1.4.5",
   "description": "The monorepo for the nginx-config-formatter",
   "author": "Aaron",
   "license": "MIT",
