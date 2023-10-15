@@ -16,7 +16,9 @@ export default defineConfig({
         }),
         {
             // https://vite-rollup-plugins.patak.dev/#rollup-plugin-node-externals
-            ...nodeExternals(),
+            ...nodeExternals({
+                deps: false
+            }),
             enforce: 'pre'
         }
     ]
